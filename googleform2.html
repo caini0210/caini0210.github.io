@@ -115,68 +115,62 @@ hr {
   
 </div></div>
   
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>  
-<script>   
- $(function() {
-  $('#submit').on('click', function() {
-    
-    // 姓名
-    var name = $('#demo_name').val() || '未填寫';
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $(function() {
+      $('#submit').on('click', function() {
+        
+        // 姓名
+        var name = $('#demo_name').val() || '未填寫';
 
-    // 性別/組別
-    var group = function() {
-      var v;
-      $('[name="demo_radio"]').each(function() {
-        if($(this).prop('checked') === true) v = $(this).val();
-      });
-      return v;
-    };
+        // 組別
+        var group = function() {
+          var v;
+          $('[name="demo_radio1"]').each(function() {
+            if($(this).prop('checked') === true) v = $(this).val();
+          });
+          return v;
+        };
 
-    // 內容
-    var thing = $('#demo_textarea').val() || '未填寫';
-   
-    
-       // 價錢
-    var price = $('#demo_price').val() || '未填寫';
-    
-           // 備註
-    var other = $('#demo_other').val() || '未填寫';
+        // 內容
+        var thing = $('#demo_textarea').val() || '未填寫';
 
-    
-       // 請款與否
-    var group = function() {
-      var v;
-      $('[name="demo_yon"]').each(function() {
-        if($(this).prop('checked') === true) v = $(this).val();
-      });
-      return v;
-    };
+        // 價錢
+        var price = $('#demo_price').val() || '未填寫';
 
-   
-  });
-});
+        // 是否
+        var yon = function() {
+          var v;
+          $('[name="demo_radio2"]').each(function() {
+            if($(this).prop('checked') === true) v = $(this).val();
+          });
+          return v;
+        };
 
-var data = {
+        // post
+        var data = {
   'entry.44209631': name,
   'entry.1642452325': group(),
   'entry.1294061539': thing,
   'entry.1294061539': price,
   'entry.1416012422': other,
-   'entry.2037090032': yon,
+  'entry.2037090032': yon(),
+
+        };
+        $.ajax({
+          type: 'POST',
+          url: 'https://docs.google.com/forms/d/e/1FAIpQLSeTgHEpVpuV_OHakO-25X-O7I4T1tIzIAUqHWLRvUqG9e6TvQ/formResponse',
+          data: data,
+          contentType: 'application/json',
+          dataType: 'jsonp',
+          complete: function() {
+            alert('資料已送出！');
+          }
+        });
+        
+      });
+    });
+  </script>
   
-};
-
-$.ajax({
-  type: 'POST',
-  url: 'https://docs.google.com/forms/d/e/1FAIpQLSe7i6ScxK4fePHk9nyxecd44lchaN0L85FBEh7KGzPuWBeOwA/formResponse',
-  data: data,
-  contentType: 'application/json',
-  dataType: 'jsonp',
-  complete: function() {
-    alert('資料已送出！');
-  }
-});  
-
- </script>    
 </body>
 </html>
