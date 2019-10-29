@@ -151,6 +151,9 @@ hr {
 
         // 價錢
         var price = $('#demo_price').val() || '未填寫';
+        
+       // 價錢
+        var other = $('#demo_price').val() || '未填寫';
 
         // 是否
         var yon = function() {
@@ -166,14 +169,14 @@ hr {
   'entry.44209631': name,
   'entry.1642452325': group(),
   'entry.1294061539': thing,
-  'entry.1294061539': price,
+  'entry.244584448': price,
   'entry.1416012422': other,
   'entry.2037090032': yon(),
 
         };
         $.ajax({
           type: 'POST',
-          url: 'https://docs.google.com/forms/d/e/1FAIpQLSeTgHEpVpuV_OHakO-25X-O7I4T1tIzIAUqHWLRvUqG9e6TvQ/formResponse',
+          url: 'https://docs.google.com/forms/d/e/1FAIpQLSc4mTJndGdykfZYxR4e0lxFB_m9-JgtpyFRUuC_JQqlflel7Q/formResponse',
           data: data,
           contentType: 'application/json',
           dataType: 'jsonp',
