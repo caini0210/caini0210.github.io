@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+</head>
+<style>
+* {
+  font-family: 微軟正黑體;
+  margin-top: 10px;
+  margin-top: 10px;
+}
+body {
+  background-color: #F7F7F7;
+}
+.max_width {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.buything {
+  width: 300px;
+  height: 70px;
+}
+.form1 {
+  background-color: #C5D2DD;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-radius: 15px;
+}
+p {
+  font-size: 12px;
+}
+input {
+  border-radius: 5px;
+  border: 1px;
+  padding: 5px;
+}
+hr {
+  border: 1px solid #DDD0C5;
+  width: 100%;
+}
+.form3 {
+  background-color: #DDD0C5;
+}
+.bt2 {
+  border: solid 0px;
+  background-color: #9AA3AB;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.bt2:hover {
+  background-color: #807973;
+}
+.bt2:active {
+  background-color: #737A80;
+}
+</style>
+<body>
+<div class="max_width">
+<div class="form1 form2">
+  <h2>設計師年會請款單</h2>
+  <p>請錢請填表單，感恩您～</p>
+
+<!-- 姓名 -->
+<div class="input"><label for="demo_name" class="tittle">姓名</label><br>
+<input class="u-full-width" id="demo_name" placeholder="錢要給誰" id="demo_name"></div>
+
+<!-- 性別 -->
+<div class="input">
+<div class="tittle">組別</div>
+<input type="radio" id="p01" name="demo_radio" value="p01">
+<label for="p01">總召</label>
+<input type="radio" id="p02" name="demo_radio" value="p02">
+<label for="p02">行政</label>
+<input type="radio" id="p03" name="demo_radio" value="p03">
+<label for="p03">課務</label><br>
+  <input type="radio" id="p04" name="demo_radio" value="p04">
+<label for="p04">行銷</label>
+<input type="radio" id="p05" name="demo_radio" value="p05">
+<label for="p05">設計</label>
+</div>
+
+<!-- 內容 -->
+<div class="input">
+<label for="demo_textarea" class="tittle">購買物品</label><br>
+<textarea class="u-full-width buything" id="demo_textarea" placeholder="物品/單價/數量/總價(幾項物品填幾行) "></textarea>
+</div>
+  
+<div class="input">
+<label for="demo_number" class="tittle">請款金額</label><br>
+<input type="number" class="u-full-width" id="demo_number" placeholder="請填數字" id="demo_number"></div>
+
+<div class="input">
+<label for="demo_other" class="tittle">其他備註</label><br> 
+<input class="u-full-width" id="demo_other" placeholder="" id="demo_other">
+</div></div>
+
+<div class="form1 form3">
+<h2>請跟行政核銷//</h2>
+<p>先墊請填否，給完你錢行政會改成是。<br>
+先跟行政拿錢請填是，拿到的瞬間填表單。</p>
+  
+<input type="radio" id="=yes" name="demo_radio" value="yes">
+<label for="yes">是</label>
+<input type="radio" id="no" name="demo_radio" value="no">
+<label for="no">否</label>
+
+<div>
+<button type="button" id="submit" class="button-primary u-full-width bt2">確認送出</button></div>
+
+  
+</div></div>
+</body>
+</html>
